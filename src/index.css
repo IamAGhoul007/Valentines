@@ -1,0 +1,82 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 346 77% 49%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 320 70% 96%;
+    --secondary-foreground: 322 65% 40%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 319 91% 91%;
+    --accent-foreground: 322 65% 40%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 346 77% 49%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+.floating-heart {
+  position: fixed;
+  animation: float-up 15s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.button-hover {
+  transition: all 0.3s ease;
+}
+
+.button-hover:hover {
+  transform: scale(1.05);
+}
+
+.success-message {
+  animation: scale-in 0.5s ease-out;
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
